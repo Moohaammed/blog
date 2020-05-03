@@ -1,0 +1,23 @@
+extends layout
+block content
+    .container
+        .jumbotron.bg-light
+            h1.text-center 
+                strong.text-dark Sign In
+            if errs
+                .alert.alert-danger.alert-dismissible.fade.show(role="alert") #{errs}
+                    button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                        span(aria-hidden="true") &times;
+            if success
+                .alert.alert-success.alert-dismissible.fade.show(role="alert") Successful Sign Up. Now You Can Sign In.
+                    button(type="button", class="close", data-dismiss="alert", aria-label="Close")
+                        span(aria-hidden="true") &times;
+            form(action="/signin", method="POST")
+                .form-group
+                    label(for="email") Email
+                    input(type="email", name="email", id="email", required).form-control
+                .form-group
+                    label(for="password") Password
+                    input(type="password", name="password", id="password", required).form-control
+                .from-group.row.justify-content-center
+                    input(type="submit").btn.btn-dark

@@ -1,0 +1,46 @@
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(rel='stylesheet', href='/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/css/main.css')
+    title Blog
+  body.bg-light
+    .container-fluid.m-0.p-0
+      nav.navbar.navbar-expand-lg.navbar-light.fixed-top.bg-light
+          a.navbar-brand(href="/")
+            strong.text-dark Blog
+          button.navbar-toggler(type="button", data-toggle="collapse", data-target="#navbarSupportedContent", aria-controls="navbarSupportedContent", aria-expanded="false", aria-label="Toggle navigation")
+              span.navbar-toggler-icon
+
+          .collapse.navbar-collapse#navbarSupportedContent
+              ul.navbar-nav.ml-auto
+                  li.nav-item
+                      a.nav-link.text-muted(href="/" data-navigation="home") 
+                        strong Home
+                          span.sr-only (current)
+                  if loggedIn
+                      li.nav-item
+                          a.nav-link.text-muted(href="/profile/user-"+user, data-navigation="profile") 
+                            strong Profile
+                      li.nav-item
+                          a.nav-link.text-muted(href="/create-article/user-"+user, data-navigation="create-article") 
+                            strong Create Article
+                      li.nav-item
+                          a.nav-link.text-muted(href="/logout" data-navigation="logout") 
+                            strong Log Out
+                  else
+                      li.nav-item
+                          a.nav-link.text-muted(href="/signin" data-navigation="signin") 
+                            strong Sign In
+                      li.nav-item
+                          a.nav-link.text-muted(href="/#signup-section" data-navigation="signup") 
+                            strong Sign Up
+      //- Block Content
+      block content
+    
+    //- Scripts
+    script(src='/js/jquery.min.js')
+    script(src='/js/popper.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/main.js')

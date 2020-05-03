@@ -1,0 +1,9 @@
+extends layout
+block content
+    #article.jumbotron
+        h1.text-center.display-4 #{article.title}
+        .author.row.justify-content-center
+            p.text-muted By #{author} In #{article.date}
+        hr
+        .container.p-4
+            p.text #{article.articleBody}

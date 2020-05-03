@@ -1,0 +1,20 @@
+extends layout
+block content
+    .container
+        if articleError
+            .alert.alert-danger.alert-dismissible.fade.show(role="alert") #{articleError}
+                button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                    span(aria-hidden="true") &times;
+        h3.text-center.text-dark What Is Your Idea About?
+
+        form#article-form.mt-5(method="POST", action="/create-article/user-"+user)
+            .form-group#article-form-title
+                label(for="title") 
+                    strong  Title: 
+                input(name="title", type="text", id="title", placeholder="Your Article Title", required)
+            .form-group#article-form-body
+                label(for="article-body") 
+                    strong  Article: 
+                textarea.form-control(name="articleBody", id="article-body", placeholder="your article goes here", required)
+            .form-group.d-flex.justify-content-center
+                input(type="submit").btn.btn-dark

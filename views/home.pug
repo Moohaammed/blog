@@ -1,0 +1,53 @@
+extends layout
+block content
+  //- .container-fluid.m-0.p-0
+  #home-section.jumbotron.rounded-0.d-flex.justify-content-center.align-items-center
+    .container.text-center
+      h1 We <strong class="">Believe</strong> In You!
+      h5 Write You <strong class="">Fabulous Thoughts</strong> In Our <strong class="">Great Blog</strong>
+      if loggedIn
+        a(href="/create-article/user-"+user).btn.btn-dark.m-5 Create Article
+      else
+        a(href="/signin").btn.btn-dark.m-5 Sign In
+  unless loggedIn
+    #signup-section.jumbotron.rounded-0
+      .row.justify-content-center.align-items-center(style="height: 100%;")
+        .col-md-7.row
+          .container-fluid.text-center
+            h1 <strong class="">Sign Up</strong> Now
+            h5 Send Your <strong class="">Thoughts</strong> To The <strong class="">World!</strong>
+        .col-md-5.bg-light.p-4
+          if signupErrs
+            each err, i in signupErrs
+              //- p this is the errors #{err.msg}
+              .alert.alert-danger.alert-dismissible.fade.show(role="alert") #{err.msg}
+                  button(type="button" class="close" data-dismiss="alert" aria-label="Close")
+                      span(aria-hidden="true") &times;
+          form(method="POST", action="/register")
+            .form-group.mb-5
+              .input-group.mb-3
+                div.input-group-prepend
+                  span#basic-addon1.input-group-text Your Name
+                input(required, name="name", type="text", class="form-control", placeholder="name", aria-label="name", aria-describedby="basic-addon1")
+            .form-group.mb-5
+              .input-group.mb-3
+                div.input-group-prepend
+                  span#basic-addon1.input-group-text Your Username
+                input(required, name="username", type="text", class="form-control", placeholder="Username", aria-label="Username", aria-describedby="basic-addon1")
+            .form-group.mb-5
+              .input-group.mb-3
+                div.input-group-prepend
+                  span#basic-addon2.input-group-text Your Email
+                input(required, name="email", type="email", class="form-control", placeholder="Email", aria-label="Email", aria-describedby="basic-addon2")
+            .form-group.mb-5
+              .input-group.mb-3
+                div.input-group-prepend
+                  span#basic-addon3.input-group-text Your Password
+                input(required, name="password", type="password", class="form-control", placeholder="Password", aria-label="Password", aria-describedby="basic-addon3")
+            .form-group.mb-5
+              .input-group.mb-3
+                div.input-group-prepend
+                  span#basic-addon3.input-group-text Confirm Password
+                input(required, name="passwordc", type="password", class="form-control", placeholder="Confirm Password", aria-label="Confrim-Password", aria-describedby="basic-addon3")
+            .row.justify-content-center
+              input(type="submit", value="Submit" class="btn btn-primary")  
