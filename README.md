@@ -1,2 +1,2 @@
 # blog
-blog is my first full-stack project
+blog is my first full-stack project.
