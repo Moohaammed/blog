@@ -1,16 +1,3 @@
-// function justifyContent() {
-var navbarHeight = document.querySelector('.navbar').getBoundingClientRect().height;
-    // var location = window.location.href;
-    // var page = location.split('/')[3]; // http://localhost:<port>/<page>/e/t/c
-    // if (page == "") {
-        // document.body.style.marginTop = 0+'px';
-    // } else {
-document.body.style.marginTop = navbarHeight+'px';
-    // }
-// }
-
-// justifyContent()
-
 function activateLink() {
     var location = window.location.href;
     var page = location.split('/')[3]; // http://localhost:<port>/<page>/e/t/c
@@ -23,3 +10,7 @@ function activateLink() {
 }
 
 activateLink()
+
+var navbarHeight = document.querySelector('.navbar').getBoundingClientRect().height;
+document.body.style.marginTop = navbarHeight+'px';
+document.querySelectorAll('.carousel-item')[0].classList.add('active');
