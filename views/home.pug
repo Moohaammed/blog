@@ -6,7 +6,7 @@ block content
       h1 We <strong class="">Believe</strong> In You!
       h5 Write You <strong class="">Fabulous Thoughts</strong> In Our <strong class="">Great Blog</strong>
       if loggedIn
-        a(href="/create-article/user-"+user).btn.btn-dark.m-5 Create Article
+        a(href="/create-article/user-"+userId).btn.btn-dark.m-5 Create Article
       else
         a(href="/signin").btn.btn-dark.m-5 Sign In
   unless loggedIn

@@ -1,6 +1,7 @@
 module.exports.declareUser = function(req, res, next) {
     if (req.session.userSession) {
-        res.locals.loggedIn = req.session.userSession
+        res.locals.loggedIn = true;
+        res.locals.userId = req.session.userSession;
         return next();
     }
     next();
