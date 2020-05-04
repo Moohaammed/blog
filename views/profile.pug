@@ -4,8 +4,9 @@ block content
         img(src="/imgs/profile.jpg", alt="background")
         .img-wrapper
         .profile-info
-            h3 Hi #{user.name}
-            a(href="/create-article/user-"+user._id).btn.btn-primary Create Article
+            .container.text-center
+                h3 Hi #{user.name}
+                a(href="/create-article/user-"+user._id).btn.btn-primary Create Article
     #profile-articles
         h1.text-center.mt-4 Your Blog
         hr.my-4
