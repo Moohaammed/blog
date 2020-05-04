@@ -157,7 +157,7 @@ app.post('/create-article/user-:userId', function(req, res) {
         if (err) {
           return console.error(err)
         }
-        res.redirect('/')
+        res.redirect('/'+article.author+'/article-'+article._id)
       })
     })
 

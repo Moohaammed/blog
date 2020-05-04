@@ -11,7 +11,7 @@ block content
         h1.text-center.mt-4 Your Blog
         hr.my-4
         each article, i in articles
-            a(href='/'+article.author+'/article-'+article._id)
+            a(id=article._id, href='/'+article.author+'/article-'+article._id)
                 .card.text-center.bg-light
                     .card-header
                         h3 #{article.title} 
