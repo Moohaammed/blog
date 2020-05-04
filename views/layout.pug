@@ -21,10 +21,10 @@ html(lang="en")
                           span.sr-only (current)
                   if loggedIn
                       li.nav-item
-                          a.nav-link.text-muted(href="/profile/user-"+user, data-navigation="profile") 
+                          a.nav-link.text-muted(href="/profile/user-"+loggedIn, data-navigation="profile") 
                             strong Profile
                       li.nav-item
-                          a.nav-link.text-muted(href="/create-article/user-"+user, data-navigation="create-article") 
+                          a.nav-link.text-muted(href="/create-article/user-"+loggedIn, data-navigation="create-article") 
                             strong Create Article
                       li.nav-item
                           a.nav-link.text-muted(href="/logout" data-navigation="logout") 
