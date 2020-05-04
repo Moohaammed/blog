@@ -21,6 +21,15 @@
   height: 650px;
 }
 
+@media screen and (max-width: 600px) {  
+  #home-section #btn-container {
+    margin-top: 100px;
+  }
+  
+  #signup-section{
+    padding-top: 60px;
+  }}
+
 #signup-section{
   height: 600px;
 }
