@@ -56,7 +56,7 @@
 }
 
 #article-form #article-form-body textarea {
-  max-width: 600px;
+  width: 100%;
   background: none;
   color: #333;
   caret-color: #333f;
