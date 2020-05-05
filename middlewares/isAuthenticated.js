@@ -6,7 +6,7 @@ module.exports.declareUser = async function(req, res, next) {
         let users = await User.find()
         let creators = [];
         users.forEach(user => {
-            creators.push(user.username)
+            creators.push(user.name)
         })
         res.locals.creators = creators;
         return next();
