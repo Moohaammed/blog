@@ -1,13 +1,13 @@
-const express = require('express');
-const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
-const session = require('express-session');
-const validate = require('./middlewares/regValidation');
 const User = require('./models/User');
-const bcrypt = require('bcrypt');
 const Article = require('./models/Article')
+const validate = require('./middlewares/regValidation');
+const bcrypt = require('bcrypt');
+const session = require('express-session');
+const express = require('express');
+const app = express();
 // connecting mongoose
 mongoose.connect('mongodb://localhost/blogdb', {useNewUrlParser: true})
   .then(() => console.log("connected to database"))

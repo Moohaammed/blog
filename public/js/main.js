@@ -5,8 +5,10 @@ function activateLink() {
         document.querySelector('[data-navigation="home"]').classList.add('focus');
     }
     else {
-        document.querySelector('[data-navigation="'+ page+'"]').classList.add('focus')
-    }    
+        if (document.querySelector('[data-navigation="'+ page+'"]')) {
+            document.querySelector('[data-navigation="'+ page+'"]').classList.add('focus')
+        }
+    }
 }
 
 activateLink()
