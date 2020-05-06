@@ -13,4 +13,6 @@ activateLink()
 
 var navbarHeight = document.querySelector('.navbar').getBoundingClientRect().height;
 document.body.style.marginTop = navbarHeight+'px';
-document.querySelectorAll('.carousel-item')[0].classList.add('active');
+if (document.querySelectorAll('.carousel-item').length != 0) {
+    document.querySelectorAll('.carousel-item')[0].classList.add('active');
+}
